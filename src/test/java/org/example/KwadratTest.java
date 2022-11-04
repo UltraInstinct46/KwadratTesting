@@ -1,11 +1,9 @@
 package org.example;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class KwadratTest {
 Kwadrat instance = new Kwadrat();
@@ -16,9 +14,14 @@ Kwadrat instance = new Kwadrat();
     @AfterEach
     void tearDown() {
     }
+@Test
+@Disabled("For Demonstration Purposed")
+void skippedTest(){
 
+}
     @Test
-    void jumlahHasilAkar() {
+    @DisplayName("Jumlah Hasil Akar")
+    void jumlahHasilAkar()  {
         int a = 1;
         int b = 1;
         int c = 1;
