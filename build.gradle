@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id "org.sonarqube" version "3.4.0.2513"
 }
 
 group 'org.example'
@@ -11,8 +12,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.9.0'
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.9.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.0')
 }
 
 test {
@@ -40,4 +42,20 @@ jacocoTestReport{                 //configuration for report formats.
         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
     finalizedBy jacocoTestCoverageVerification  //run right after jacocoTestReport
+}
+
+// build.gradle
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}
+
+// build.gradle
+subprojects {
+    sonarqube {
+        properties {
+            property 'sonar.host.url', 'http://localhost:9000'
+        }
+    }
 }

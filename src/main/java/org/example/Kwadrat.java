@@ -36,13 +36,12 @@ public class Kwadrat {
         }
         return hasil;
     }
-    public String PertidaksamaanKuadrat(int a, int b, int c,String equivalent){
+    public String PertidaksamaanKuadrat(int a, int b, int c, String equivalent){
         String hasil = "";
         double root = Math.sqrt(b*b - 4*a*c);
         double answerPlus = (-(b)+root)/2*a;
         double answerMin = (-(b)-root)/2*a;
         double test;
-        test = a*((answerPlus-1)*(answerPlus-1)) + b * (answerPlus-1) + c;
 
         boolean if1 = answerPlus > answerMin,if2 = answerPlus < answerMin;
         if(answerPlus > answerMin){
