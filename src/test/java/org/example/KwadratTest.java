@@ -41,12 +41,12 @@ void skippedTest(){
     @Test
     void rumusABC() {
         int a = 1;
-        int b = 1;
-        int c = 1;
+        int b = 2;
+        int c = 0;
         String result = instance.RumusABC(a,b,c);
         //Expected Result
-        double answerPlus = 1;
-        double answerMin = 1;
+        double answerPlus = 0;
+        double answerMin = -2;
         String expResult = "Answer Plus = " + answerPlus + " Answer Minus = " + answerMin;
         //Assertion
         assertEquals(expResult,result);
@@ -83,10 +83,10 @@ void skippedTest(){
     @Test
     void pertidaksamaanLinear() {
         int a = 1;
-        int b = 1;
+        int b = 2;
         int c = 1;
-        int d = 1;
-        String equivalent = "<";
+        int d = 2;
+        String equivalent = ">";
         String result = instance.PertidaksamaanLinear(a,b,c,d,equivalent);
         //Expected Result
         double hasil2 = 1;
@@ -94,9 +94,6 @@ void skippedTest(){
         String expResult = "x "+ equivalent + " " + hasil2;
         //Assertion
         assertEquals(expResult,result);
-        assertThrows(ArithmeticException.class,()->{
-           Integer.parseInt(result);
-        });
     }
 
     //Parameterized Test with Csv Source
