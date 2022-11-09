@@ -39,7 +39,6 @@ jacocoTestReport{                 //configuration for report formats.
         xml.enabled true
         csv.enabled true
         html.enabled true
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
     finalizedBy jacocoTestCoverageVerification  //run right after jacocoTestReport
 }

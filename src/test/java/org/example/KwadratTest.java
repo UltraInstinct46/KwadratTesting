@@ -58,9 +58,9 @@ void skippedTest(){
         int x2 = 1;
         String result = instance.MenyusunPersamaanKuadrat(x1,x2);
         //Expected Result
-        int hasilx1 = 1;
+        int hasilx1 = -2;
         int hasilx2 = 1;
-        String expResult = "x^2 +" + hasilx1 +"x   +" + hasilx2 + " = 0";
+        String expResult = "x^2 " + hasilx1 +"x +" + hasilx2 + " = 0";
         //Assertion
         assertEquals(expResult,result);
     }
@@ -94,6 +94,9 @@ void skippedTest(){
         String expResult = "x "+ equivalent + " " + hasil2;
         //Assertion
         assertEquals(expResult,result);
+        assertThrows(ArithmeticException.class,()->{
+           Integer.parseInt(result);
+        });
     }
 
     //Parameterized Test with Csv Source
